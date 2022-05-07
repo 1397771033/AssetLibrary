@@ -1,0 +1,316 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AssetLibrary.Api</name>
+    </assembly>
+    <members>
+        <member name="M:AssetLibrary.Api.Controllers.AssetsTypesController.GetAssetTypes">
+            <summary>
+            获取资产类型数据
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AssetLibrary.Api.Controllers.BaseController.UserId">
+            <summary>
+            后边改成从token获取
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.SaveToTenantAsset">
+            <summary>
+            保存到场景资产
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.GetChildAssets(System.String,AssetLibrary.Api.Models.AssetTypeEnum)">
+            <summary>
+            获取场景资产下的子资产
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.Add">
+            <summary>
+            添加场景资产
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.Copy(System.String)">
+            <summary>
+            复制场景资产
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.Rename(System.String)">
+            <summary>
+            重命名
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.ScenesController.Get(System.Int32,System.Int32)">
+            <summary>
+            获取场景数据
+            </summary>
+            <param name="page"></param>
+            <param name="size"></param>
+            <returns></returns>
+        </member>
+        <member name="T:AssetLibrary.Api.Controllers.SystemAssetsController">
+            <summary>
+            系统资产
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SystemAssetsController.GetChildAssets(System.String)">
+            <summary>
+            获取该系统资产下的子资产
+            </summary>
+            <param name="id">系统资产id，如果为空则查一级目录</param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantAssetsController.GetChildAssets(System.String,AssetLibrary.Api.Models.AssetTypeEnum)">
+            <summary>
+            获取租户资产下子资产数据
+            </summary>
+            <param name="id"></param>
+            <param name="assetType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantAssetsController.Add">
+            <summary>
+            添加租户资产
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantAssetsController.Modify(System.String)">
+            <summary>
+            重命名
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantAssetsController.Move">
+            <summary>
+            移动租户资产
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Helpers.GuidHelper.GeneraterByTime">
+            <summary>
+            时间排序guid
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:AssetLibrary.Api.Models.CreationInfo">
+            <summary>
+            创建信息
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.Entities.Entity.GenerateId">
+            <summary>
+            为该实体Id生成一个Guid并赋值，guid生成是按时间排序的，可提高性能
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.Scene.Name">
+            <summary>
+            场景名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.Scene.CreationInfo">
+            <summary>
+            创建信息
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.Scene.ModificationInfo">
+            <summary>
+            修改信息
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.SceneId">
+            <summary>
+            所属场景id
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.Name">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.AssetType">
+            <summary>
+            资产类型，区分该资产是模型/图标
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.ParentId">
+            <summary>
+            上一级资产Id
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.Entities.SceneAsset.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.Entities.SceneAsset.CreateIcon(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建图标
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.Entities.SceneAsset.CreateModel(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.Entities.SceneAsset.CreateDirectory(System.String,System.String,System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.SystemAsset.Name">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.SystemAsset.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.SystemAsset.AssetType">
+            <summary>
+            资产类型，区分该资产是模型/图标
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.SystemAsset.ParentId">
+            <summary>
+            上一级资产Id
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.SystemAsset.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.SystemAsset.CreateIcon(System.String,System.String,System.String)">
+            <summary>
+            创建图标
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.SystemAsset.CreateModel(System.String,System.String,System.String)">
+            <summary>
+            创建模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.SystemAsset.CreateDirectory(System.String,System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.Name">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.AssetType">
+            <summary>
+            资产类型，区分该资产是模型/图标
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.ParentId">
+            <summary>
+            上一级资产Id
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.TenantAsset.TenantId">
+            <summary>
+            租户id
+            </summary>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.TenantAsset.CreateIcon(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建图标
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.TenantAsset.CreateModel(System.String,System.String,System.String,System.String)">
+            <summary>
+            创建模型
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Models.TenantAsset.CreateDirectory(System.String,System.String,System.String)">
+            <summary>
+            创建目录
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="F:AssetLibrary.Api.Models.FileTypeEnum.Element">
+            <summary>
+            元素/组件 eg:图标/模型
+            </summary>
+        </member>
+        <member name="T:AssetLibrary.Api.Models.ModificationInfo">
+            <summary>
+            修改信息
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.SystemAssetVO.Name">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.SystemAssetVO.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.SystemAssetVO.AssetType">
+            <summary>
+            资产类型，区分该资产是模型/图标
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.SystemAssetVO.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.TenantAssetVO.Name">
+            <summary>
+            资产名称
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.TenantAssetVO.Data">
+            <summary>
+            数据
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.TenantAssetVO.AssetType">
+            <summary>
+            资产类型，区分该资产是模型/图标
+            </summary>
+        </member>
+        <member name="P:AssetLibrary.Api.Models.VO.TenantAssetVO.FileType">
+            <summary>
+            文件类型
+            </summary>
+        </member>
+    </members>
+</doc>
