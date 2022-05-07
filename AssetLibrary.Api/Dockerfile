@@ -1,21 +1,11 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
-EXPOSE 6001
+COPY . ./
+EXPOSE 80 443 6100
 
-FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
-WORKDIR /src
-COPY ["AssetLibrary.Api/AssetLibrary.Api.csproj", "AssetLibrary.Api/"]
-RUN dotnet restore "AssetLibrary.Api/AssetLibrary.Api.csproj"
-COPY . .
-WORKDIR "/src/AssetLibrary.Api"
-RUN dotnet build "AssetLibrary.Api.csproj" -c Release -o /app/build
-
-FROM build AS publish
-RUN dotnet publish "AssetLibrary.Api.csproj" -c Release -o /app/publish
-
-FROM base AS final
-WORKDIR /app
-COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "AssetLibrary.Api.dll"]
+ENV LANG C.UTF-8
+RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
+MAINTAINER Áì½³½ÌÓý
+ENTRYPOINT ["dotnet", "AssetLibrary.API.dll"]
