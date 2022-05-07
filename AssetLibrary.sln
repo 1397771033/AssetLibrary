@@ -3,11 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32413.511
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetLibrary.Api", "AssetLibrary.Api\AssetLibrary.Api.csproj", "{0D332A38-FB29-4546-AEBC-C4D385134544}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetLibrary.Domain", "AssetLibrary.Domain\AssetLibrary.Domain.csproj", "{471379F0-F5DA-4989-8F36-56857662D8C9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetLibrary.Service", "AssetLibrary.Service\AssetLibrary.Service.csproj", "{49944A8C-C132-4791-9CBA-4F33D3232AE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AssetLibrary.Api", "AssetLibrary.Api\AssetLibrary.Api.csproj", "{0D332A38-FB29-4546-AEBC-C4D385134544}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,14 +15,6 @@ Global
 		{0D332A38-FB29-4546-AEBC-C4D385134544}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D332A38-FB29-4546-AEBC-C4D385134544}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D332A38-FB29-4546-AEBC-C4D385134544}.Release|Any CPU.Build.0 = Release|Any CPU
-		{471379F0-F5DA-4989-8F36-56857662D8C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{471379F0-F5DA-4989-8F36-56857662D8C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{471379F0-F5DA-4989-8F36-56857662D8C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{471379F0-F5DA-4989-8F36-56857662D8C9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49944A8C-C132-4791-9CBA-4F33D3232AE9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49944A8C-C132-4791-9CBA-4F33D3232AE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49944A8C-C132-4791-9CBA-4F33D3232AE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49944A8C-C132-4791-9CBA-4F33D3232AE9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
