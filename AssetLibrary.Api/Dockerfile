@@ -5,5 +5,5 @@ EXPOSE 6001
 
 ENV LANG C.UTF-8
 RUN /bin/cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime && echo 'Asia/Shanghai' >/etc/timezone
-MAINTAINER yuanxinyuan
+MAINTAINER yuanxinyuan 
 ENTRYPOINT ["dotnet", "AssetLibrary.API.dll"]
