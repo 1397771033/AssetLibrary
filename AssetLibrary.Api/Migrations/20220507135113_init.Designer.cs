@@ -3,33 +3,31 @@ using System;
 using AssetLibrary.Api.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace AssetLibrary.Api.Migrations
 {
     [DbContext(typeof(AssetLibraryDbContext))]
-    [Migration("20220507075930_init")]
+    [Migration("20220507135113_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.7")
-                .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                .HasAnnotation("Relational:MaxIdentifierLength", 64)
+                .HasAnnotation("ProductVersion", "5.0.8");
 
             modelBuilder.Entity("AssetLibrary.Api.Models.Entities.Scene", b =>
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("id");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("name");
 
                     b.HasKey("Id");
@@ -41,7 +39,7 @@ namespace AssetLibrary.Api.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("id");
 
                     b.Property<int?>("AssetType")
@@ -49,7 +47,7 @@ namespace AssetLibrary.Api.Migrations
                         .HasColumnName("assetType");
 
                     b.Property<string>("Data")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("data");
 
                     b.Property<int>("FileType")
@@ -59,18 +57,18 @@ namespace AssetLibrary.Api.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("parentId");
 
                     b.Property<string>("SceneId")
                         .IsRequired()
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("sceneId");
 
                     b.HasKey("Id");
@@ -82,18 +80,18 @@ namespace AssetLibrary.Api.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("id");
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("password");
 
                     b.Property<string>("UserName")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("userName");
 
                     b.HasKey("Id");
@@ -103,19 +101,19 @@ namespace AssetLibrary.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ae8e0107-88ad-442f-a7dd-964104d07e6e",
+                            Id = "ae8e0168-233f-41d4-b97d-772b9ba46522",
                             Password = "123456",
                             UserName = "admin1"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-44fa-b797-b762ce2a3320",
+                            Id = "ae8e0168-233f-4b07-a4d4-ce184f48f9dd",
                             Password = "123456",
                             UserName = "admin2"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-4260-ad26-338cadf25f7b",
+                            Id = "ae8e0168-233f-4329-bea0-08761f101f5f",
                             Password = "123456",
                             UserName = "admin3"
                         });
@@ -125,7 +123,7 @@ namespace AssetLibrary.Api.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("id");
 
                     b.Property<int?>("AssetType")
@@ -133,7 +131,7 @@ namespace AssetLibrary.Api.Migrations
                         .HasColumnName("assetType");
 
                     b.Property<string>("Data")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("data");
 
                     b.Property<int>("FileType")
@@ -143,12 +141,12 @@ namespace AssetLibrary.Api.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("parentId");
 
                     b.HasKey("Id");
@@ -158,78 +156,78 @@ namespace AssetLibrary.Api.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "ae8e0107-88ad-4d41-a399-dfbe8d27fe60",
+                            Id = "ae8e0168-233e-45dc-bbd1-aeea35276a56",
                             AssetType = 2,
                             FileType = 2,
                             Name = "建筑"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-470e-94a8-cb2b7badc560",
+                            Id = "ae8e0168-233f-4b58-a640-b80da4e5189a",
                             AssetType = 2,
                             Data = "住宅数据",
                             FileType = 2,
                             Name = "住宅",
-                            ParentId = "ae8e0107-88ad-4d41-a399-dfbe8d27fe60"
+                            ParentId = "ae8e0168-233e-45dc-bbd1-aeea35276a56"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-4abc-9e1c-a63d7bea745d",
+                            Id = "ae8e0168-233f-40cd-802c-ed9fc0e35dde",
                             AssetType = 2,
                             Data = "商业数据",
                             FileType = 2,
                             Name = "商业",
-                            ParentId = "ae8e0107-88ad-4d41-a399-dfbe8d27fe60"
+                            ParentId = "ae8e0168-233e-45dc-bbd1-aeea35276a56"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-4d09-98ff-8983529c0ecc",
+                            Id = "ae8e0168-233f-42f0-8dca-1272993a6bbd",
                             AssetType = 2,
                             FileType = 2,
                             Name = "交通"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-43bf-b6b5-b2a03cebc1c4",
+                            Id = "ae8e0168-233f-457e-b166-38c1905d57bd",
                             AssetType = 2,
                             Data = "信号灯数据",
                             FileType = 2,
                             Name = "信号灯",
-                            ParentId = "ae8e0107-88ad-4d09-98ff-8983529c0ecc"
+                            ParentId = "ae8e0168-233f-42f0-8dca-1272993a6bbd"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-44c7-976e-350c083266eb",
+                            Id = "ae8e0168-233f-42f7-9e02-52df303929d3",
                             AssetType = 2,
                             Data = "公交站数据",
                             FileType = 2,
                             Name = "公交站",
-                            ParentId = "ae8e0107-88ad-4d09-98ff-8983529c0ecc"
+                            ParentId = "ae8e0168-233f-42f0-8dca-1272993a6bbd"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-47a9-8cdf-c50671189dc4",
+                            Id = "ae8e0168-233f-4ee0-8a43-fa289e38ce90",
                             AssetType = 2,
                             FileType = 2,
                             Name = "市政"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-4350-85d7-3c4f6bf68cb1",
+                            Id = "ae8e0168-233f-497a-b5ed-6f54d2cf391d",
                             AssetType = 2,
                             Data = "井盖数据",
                             FileType = 2,
                             Name = "井盖",
-                            ParentId = "ae8e0107-88ad-47a9-8cdf-c50671189dc4"
+                            ParentId = "ae8e0168-233f-4ee0-8a43-fa289e38ce90"
                         },
                         new
                         {
-                            Id = "ae8e0107-88ad-490b-b044-7e557d851e5a",
+                            Id = "ae8e0168-233f-40e2-9db9-9fcac4cd4589",
                             AssetType = 2,
                             Data = "售货机数据",
                             FileType = 2,
                             Name = "售货机",
-                            ParentId = "ae8e0107-88ad-47a9-8cdf-c50671189dc4"
+                            ParentId = "ae8e0168-233f-4ee0-8a43-fa289e38ce90"
                         });
                 });
 
@@ -237,7 +235,7 @@ namespace AssetLibrary.Api.Migrations
                 {
                     b.Property<string>("Id")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("id");
 
                     b.Property<int?>("AssetType")
@@ -245,7 +243,7 @@ namespace AssetLibrary.Api.Migrations
                         .HasColumnName("assetType");
 
                     b.Property<string>("Data")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("text")
                         .HasColumnName("data");
 
                     b.Property<int>("FileType")
@@ -255,18 +253,18 @@ namespace AssetLibrary.Api.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
+                        .HasColumnType("varchar(50)")
                         .HasColumnName("name");
 
                     b.Property<string>("ParentId")
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("parentId");
 
                     b.Property<string>("TenantId")
                         .IsRequired()
                         .HasMaxLength(36)
-                        .HasColumnType("nvarchar(36)")
+                        .HasColumnType("varchar(36)")
                         .HasColumnName("tenantId");
 
                     b.HasKey("Id");
@@ -279,15 +277,15 @@ namespace AssetLibrary.Api.Migrations
                     b.OwnsOne("AssetLibrary.Api.Models.CreationInfo", "CreationInfo", b1 =>
                         {
                             b1.Property<string>("SceneId")
-                                .HasColumnType("nvarchar(36)");
+                                .HasColumnType("varchar(36)");
 
                             b1.Property<DateTime>("CreationTime")
-                                .HasColumnType("datetime2")
+                                .HasColumnType("datetime")
                                 .HasColumnName("creationTime");
 
                             b1.Property<string>("CreatorId")
                                 .HasMaxLength(36)
-                                .HasColumnType("nvarchar(36)")
+                                .HasColumnType("varchar(36)")
                                 .HasColumnName("creatorId");
 
                             b1.HasKey("SceneId");
@@ -301,15 +299,15 @@ namespace AssetLibrary.Api.Migrations
                     b.OwnsOne("AssetLibrary.Api.Models.ModificationInfo", "ModificationInfo", b1 =>
                         {
                             b1.Property<string>("SceneId")
-                                .HasColumnType("nvarchar(36)");
+                                .HasColumnType("varchar(36)");
 
                             b1.Property<DateTime>("ModificationTime")
-                                .HasColumnType("datetime2")
+                                .HasColumnType("datetime")
                                 .HasColumnName("modificationTime");
 
                             b1.Property<string>("ModifierId")
                                 .HasMaxLength(36)
-                                .HasColumnType("nvarchar(36)")
+                                .HasColumnType("varchar(36)")
                                 .HasColumnName("modifierId");
 
                             b1.HasKey("SceneId");

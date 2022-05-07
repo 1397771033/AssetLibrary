@@ -50,10 +50,12 @@ namespace AssetLibrary.Api
 
 
             #region 配置数据库连接
-            string sqlServerConn = Configuration.GetValue<string>("SqlConnections:SqlServer");
+            //string sqlServerConn = Configuration.GetValue<string>("SqlConnections:SqlServer");
+            string mysqlConn = Configuration.GetValue<string>("SqlConnections:MySql");
             services.AddDbContext<AssetLibraryDbContext>(opt =>
             {
-                opt.UseSqlServer(sqlServerConn);
+                //opt.UseSqlServer(sqlServerConn);
+                opt.UseMySQL(mysqlConn);
             });
             #endregion
 
