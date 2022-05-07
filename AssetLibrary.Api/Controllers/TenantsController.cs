@@ -18,6 +18,11 @@ namespace AssetLibrary.Api.Controllers
         {
             _dbContext = dbContext;
         }
+        /// <summary>
+        /// 租户登录
+        /// </summary>
+        /// <param name="param"></param>
+        /// <returns></returns>
         [Route("accounts/signIn")]
         [HttpPost]
         public IActionResult SignIn(SignInParam param)

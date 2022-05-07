@@ -1,5 +1,5 @@
 ﻿using AssetLibrary.Api.Infrastructure;
-using AssetLibrary.Api.Models.Params.scenes;
+using AssetLibrary.Api.Models.VO.scenes;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
@@ -24,8 +24,8 @@ namespace AssetLibrary.Api.Controllers
         /// <summary>
         /// 获取场景数据
         /// </summary>
-        /// <param name="page"></param>
-        /// <param name="size"></param>
+        /// <param name="page">当前页</param>
+        /// <param name="size">页大小</param>
         /// <returns></returns>
         [HttpGet]
         [Route("scenes")]

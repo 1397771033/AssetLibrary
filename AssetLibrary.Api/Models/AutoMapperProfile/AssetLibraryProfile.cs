@@ -1,11 +1,7 @@
 ﻿using AssetLibrary.Api.Models.Entities;
-using AssetLibrary.Api.Models.Params.scenes;
 using AssetLibrary.Api.Models.VO;
+using AssetLibrary.Api.Models.VO.scenes;
 using AutoMapper;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace AssetLibrary.Api.Models.AutoMapperProfile
 {

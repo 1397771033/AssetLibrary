@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
-namespace AssetLibrary.Api.Models.Params.scenes
+namespace AssetLibrary.Api.Models.VO.scenes
 {
     public class SceneVO
     {

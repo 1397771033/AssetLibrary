@@ -1,5 +1,6 @@
 ﻿using AssetLibrary.Api.Infrastructure;
 using AssetLibrary.Api.Models;
+using AssetLibrary.Api.Models.Params.tenantAssets;
 using AssetLibrary.Api.Models.VO;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
@@ -25,8 +26,8 @@ namespace AssetLibrary.Api.Controllers
         /// <summary>
         /// 获取租户资产下子资产数据
         /// </summary>
-        /// <param name="id"></param>
-        /// <param name="assetType"></param>
+        /// <param name="id">资产id</param>
+        /// <param name="assetType">资产类型，如果资产id为空的话会根据类型查</param>
         /// <returns></returns>
         [HttpGet]
         [Route("tenantAssets/childAssets")]
@@ -51,29 +52,31 @@ namespace AssetLibrary.Api.Controllers
         /// <returns></returns>
         [HttpPost]
         [Route("tenantAssets")]
-        public IActionResult Add()
+        public IActionResult Add(AddTenantAssetParam param)
         {
             return Ok();
         }
         /// <summary>
         /// 重命名
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">资产id</param>
+        /// <param name="param">body参数</param>
         /// <returns></returns>
         [HttpPut]
         [Route("tenantAssets/{id}/rename")]
-        public IActionResult Modify(string id)
+        public IActionResult Rename(string id, TenantAssetRenameParam param)
         {
             return Ok();
         }
         /// <summary>
         /// 移动租户资产
         /// </summary>
-        /// <param name="id"></param>
+        /// <param name="id">资产id</param>
+        /// <param name="param">body参数</param>
         /// <returns></returns>
         [HttpPut]
         [Route("tenantAssets/{id}/move")]
-        public IActionResult Move()
+        public IActionResult Move(string id, TenantAssetMoveParam param)
         {
             return Ok();
         }
