@@ -55,7 +55,7 @@ namespace AssetLibrary.Api
                     Scheme = "XY",
                     BearerFormat = "XY",
                     In = ParameterLocation.Header,
-                    Description = "«Î ‰»Îtoken£¨∏Ò Ω£∫XY {token}",
+                    Description = "Please enter the access token,Format:XY {token}",
                 });
                 c.AddSecurityRequirement(new OpenApiSecurityRequirement
                 {
