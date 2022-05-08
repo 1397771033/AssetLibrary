@@ -80,5 +80,17 @@ namespace AssetLibrary.Api.Controllers
         {
             return Ok();
         }
+
+        /// <summary>
+        /// 删除租户资产
+        /// </summary>
+        /// <param name="id">资产id</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("tenantAssets/{id}")]
+        public IActionResult Delete(string id)
+        {
+            return Ok();
+        }
     }
 }

@@ -1,11 +1,15 @@
+using AssetLibrary.Api.Extensions.Filters;
 using AssetLibrary.Api.Infrastructure;
 using AssetLibrary.Api.Models.AutoMapperProfile;
+using CSRedis;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
+using System.Configuration;
 using System.IO;
 
 namespace AssetLibrary.Api
@@ -23,7 +27,12 @@ namespace AssetLibrary.Api
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddControllers();
+            services.AddControllers()
+                .AddMvcOptions(opt =>
+                {
+                    opt.Filters.Add<CustomAuthorizationFilter>();
+                });
+
             #region 配置swagger
             services.AddSwaggerGen(c =>
             {
@@ -38,6 +47,30 @@ namespace AssetLibrary.Api
                 // 为Swagger接口配置注释路径
                 var xmlPath = Path.Combine(basePath, "AssetLibrary.Api.xml");
                 c.IncludeXmlComments(xmlPath);
+
+                c.AddSecurityDefinition("XY", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "XY",
+                    BearerFormat = "XY",
+                    In = ParameterLocation.Header,
+                    Description = "请输入token，格式：XY {token}",
+                });
+                c.AddSecurityRequirement(new OpenApiSecurityRequirement
+                {
+                    {
+                          new OpenApiSecurityScheme
+                            {
+                                Reference = new OpenApiReference
+                                {
+                                    Type = ReferenceType.SecurityScheme,
+                                    Id = "XY"
+                                }
+                            },
+                            new string[] {}
+                    }
+                });
             });
             #endregion
 
@@ -53,6 +86,12 @@ namespace AssetLibrary.Api
             #endregion
 
             services.AddAutoMapper(typeof(AssetLibraryProfile));
+
+            #region 配置redis
+            var redisConnection = Configuration.GetValue<string>("RedisConnection");
+            var csredis = new CSRedisClient(redisConnection);
+            RedisHelper.Initialization(csredis);
+            #endregion
 
 
         }

@@ -79,5 +79,17 @@ namespace AssetLibrary.Api.Controllers
         {
             return Ok();
         }
+
+        /// <summary>
+        /// 删除场景资产
+        /// </summary>
+        /// <param name="id">资产id</param>
+        /// <returns></returns>
+        [HttpDelete]
+        [Route("sceneAssets/{id}")]
+        public IActionResult Delete(string id)
+        {
+            return Ok();
+        }
     }
 }

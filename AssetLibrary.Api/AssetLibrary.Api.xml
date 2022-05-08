@@ -4,16 +4,50 @@
         <name>AssetLibrary.Api</name>
     </assembly>
     <members>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.GeneratorToken(System.String)">
+            <summary>
+            生成令牌
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.GeneratorRefreshToken(System.String)">
+            <summary>
+            生成刷新令牌
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.GeneratorAccessToken(System.String)">
+            <summary>
+            生成访问令牌
+            </summary>
+            <param name="tenantId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.ValidRefreshToken(System.String)">
+            <summary>
+            判断刷新令牌是否有效
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.GetAccessTokenInfo(System.String)">
+            <summary>
+            获取访问令牌信息
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Authorizations.TokenHandler.RefreshToken(System.String)">
+            <summary>
+            刷新令牌
+            </summary>
+            <returns></returns>
+        </member>
         <member name="M:AssetLibrary.Api.Controllers.AssetsTypesController.GetAssetTypes">
             <summary>
             获取资产类型数据
             </summary>
             <returns></returns>
-        </member>
-        <member name="P:AssetLibrary.Api.Controllers.BaseController.UserId">
-            <summary>
-            后边改成从token获取
-            </summary>
         </member>
         <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.SaveToTenantAsset">
             <summary>
@@ -44,6 +78,13 @@
         <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.Rename(System.String,AssetLibrary.Api.Models.Params.tenantAssets.TenantAssetMoveParam)">
             <summary>
             场景资产重命名
+            </summary>
+            <param name="id">资产id</param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.SceneAssetsController.Delete(System.String)">
+            <summary>
+            删除场景资产
             </summary>
             <param name="id">资产id</param>
             <returns></returns>
@@ -98,11 +139,30 @@
             <param name="param">body参数</param>
             <returns></returns>
         </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantAssetsController.Delete(System.String)">
+            <summary>
+            删除租户资产
+            </summary>
+            <param name="id">资产id</param>
+            <returns></returns>
+        </member>
         <member name="M:AssetLibrary.Api.Controllers.TenantsController.SignIn(AssetLibrary.Api.Models.Params.accounts.SignInParam)">
             <summary>
-            租户登录
+            登录
             </summary>
             <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantsController.RefreshToken(AssetLibrary.Api.Models.Params.accounts.RefreshTokenParam)">
+            <summary>
+            刷新令牌
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AssetLibrary.Api.Controllers.TenantsController.GetMyInfo">
+            <summary>
+            获取当前用户信息
+            </summary>
             <returns></returns>
         </member>
         <member name="M:AssetLibrary.Api.Helpers.GuidHelper.GeneraterByTime">
